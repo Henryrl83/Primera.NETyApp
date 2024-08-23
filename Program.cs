@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace Primera.NETyApp
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
+        {
+            Song song = new Song();
+            song.Title = "Dark side of moon";
+            song.Seconds = 500;
+            song.Position = new ShelvePosition(0,0);
+            song.Play();
+
+            Console.ReadKey();
+
+        }
+        static void Declarations()
         {
             //==
             //!=
