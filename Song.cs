@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace Primera.NETyApp
 {
-    public class Song : IMedia
+    public class Song : Media
     {
         public long Seconds { get; set; }
-        public string Title { get; set; }
         public ShelvePosition Position { get; set; }
-
-        public void Play()
+        public override void Play()
         {
-            Console.WriteLine($"Playing {Title}");
+            Console.WriteLine("Increase volume");
+            base.Play();
+        }
+        public override string ToString()
+        {
+            return $"Titulo: {Title} Duración: {Seconds}";
         }
     }
 }
