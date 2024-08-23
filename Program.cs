@@ -19,11 +19,6 @@ namespace Primera.NETyApp
             //&& (AND)
             //|| (OR)
 
-
-
-        }
-        static void Declarations()
-        {
             int number = 0;
             double numberDecimals = 0.0d;
             bool yayOrNay = true;
