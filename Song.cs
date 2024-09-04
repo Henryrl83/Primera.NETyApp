@@ -10,7 +10,12 @@ namespace Primera.NETyApp
     {
         public long Seconds { get; set; }
         public ShelvePosition Position { get; set; }
-        public override void Play()
+        public String Category { get; set; }
+        public List<Artist> Artists { get; set; }
+        public int Visits { get; set; }
+
+
+    public override void Play()
         {
             Console.WriteLine("Increase volume");
             base.Play();

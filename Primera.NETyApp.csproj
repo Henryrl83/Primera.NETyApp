@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artist.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="PlayList.cs" />
