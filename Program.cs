@@ -28,7 +28,6 @@ namespace Primera.NETyApp
 
             WriteLineSpecial(song, "Start With", "enjoy");
 
-
             Console.WriteLine(song2.ToString());
 
             Tuple<int, string, Song> tuple = new Tuple<int, string, Song>(0, "Hola", song);
@@ -46,6 +45,17 @@ namespace Primera.NETyApp
             Console.ReadKey();
 
         }
+        private static void DownloadSong()
+        {
+            DownloadService downloadService = new DownloadService();
+            byte[] song = downloadService.Download("Dark side on the moon");
+        }
+
+        private async static void DownloadSongAsync()
+        {
+            DownloadService downloadService = new DownloadService();
+            byte[] futureSong = await downloadService.DownloadAsync("Dark side on the moon");
+        }
         private static void ListExplanation()
         {
             List<int> numbers = new List<int>();
@@ -56,6 +66,7 @@ namespace Primera.NETyApp
         private static void StackExplanation()
         {
             Stack<Song> saleSongs = new Stack<Song>();
+            saleSongs.Push(new Song());
             saleSongs.Push(new Song());
             Song song = saleSongs.Pop();
         }
@@ -86,8 +97,9 @@ namespace Primera.NETyApp
             //Utils.AddRangeDictionary(clients, elements);
             clients.AddRange(elements);
         }
-        static void WriteLineSpecial<T>(T data, string prefix, string suffix)
+        static void WriteLineSpecial<T>(T data, string prefix, string suffix) where T : new()
         {
+            T myNewType = new T();
             Console.WriteLine($"{prefix} {data} {suffix}");
         }
         static void Declarations()
